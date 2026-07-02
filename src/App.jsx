@@ -70,7 +70,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-[100dvh] sm:min-h-screen bg-[#050505] flex items-start sm:items-center justify-center relative overflow-hidden">
         {/* Ambient Desktop Background Effects */}
         <div className="hidden sm:block absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-pulse duration-1000" />
         <div className="hidden sm:block absolute bottom-[10%] right-[20%] w-[400px] h-[400px] bg-pink-500/10 rounded-full blur-[120px] pointer-events-none" />
