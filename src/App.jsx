@@ -25,9 +25,27 @@ function AppContent() {
   const location = useLocation();
   const scrollRef = useRef(null);
   
+  // Prevent browser from auto-scrolling on refresh
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    
+    // Force scroll to top on initial load (refresh)
+    const timeoutId = setTimeout(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollTop = 0;
+      }
+    }, 10);
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  // Scroll to top on route change
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTo(0, 0);
+      scrollRef.current.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      scrollRef.current.scrollTop = 0; // Fallback
     }
   }, [location.pathname]);
   
