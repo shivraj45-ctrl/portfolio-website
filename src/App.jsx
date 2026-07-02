@@ -70,13 +70,13 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <div className="min-h-[100dvh] sm:min-h-screen bg-[#050505] flex items-start sm:items-center justify-center relative overflow-hidden">
+      <div className="fixed inset-0 bg-[#050505] flex items-start sm:items-center justify-center overflow-hidden">
         {/* Ambient Desktop Background Effects */}
         <div className="hidden sm:block absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-pulse duration-1000" />
         <div className="hidden sm:block absolute bottom-[10%] right-[20%] w-[400px] h-[400px] bg-pink-500/10 rounded-full blur-[120px] pointer-events-none" />
         
         {/* The Mobile App Container */}
-        <div className="z-10 w-full h-[100dvh] sm:h-[90vh] max-w-[480px] sm:rounded-[40px] sm:shadow-[0_0_80px_rgba(139,92,246,0.15)] sm:border border-white/10 relative overflow-hidden bg-background">
+        <div className="z-10 w-full h-full sm:h-[90vh] max-w-[480px] sm:rounded-[40px] sm:shadow-[0_0_80px_rgba(139,92,246,0.15)] sm:border border-white/10 relative overflow-hidden bg-background">
           <AppContent />
         </div>
       </div>
