@@ -21,11 +21,6 @@ export default function Home() {
     { name: 'Problem Solver', icon: FaBrain, color: 'text-primary', bg: 'bg-primary/20', link: '/service/problem-solver' },
   ];
 
-  const quickLinks = [
-    { name: 'My Journey', link: '/journey', emoji: '🚀' },
-    { name: 'Certificates', link: '/certificates', emoji: '🏆' },
-  ];
-
   const socials = [
     { name: 'LinkedIn', icon: FaLinkedinIn, gradient: 'from-[#0077b5] to-[#004e7a]', shadow: 'shadow-[#0077b5]/40', link: 'https://www.linkedin.com/in/shivraj-kudke-08b185381' },
     { name: 'GitHub', icon: FaGithub, gradient: 'from-[#333333] to-[#111111]', shadow: 'shadow-white/10', link: 'https://github.com/shivraj45-ctrl' },
@@ -36,7 +31,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col w-full min-h-full px-6 pt-10 pb-28 font-sans">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0, scale: 0.98 }} 
+      transition={{ duration: 0.3 }}
+      className="flex flex-col w-full min-h-full px-6 pt-10 pb-28 font-sans"
+    >
       {/* Top Header */}
       <div className="flex justify-between items-center mb-10">
         <button onClick={() => navigate('/about')} className="p-2 -ml-2 rounded-full hover:bg-white/5 transition">

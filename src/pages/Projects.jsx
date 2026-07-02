@@ -12,7 +12,13 @@ export default function Projects() {
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <div className="flex flex-col w-full min-h-full px-6 pt-10 pb-32">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0, scale: 0.98 }} 
+      transition={{ duration: 0.3 }}
+      className="flex flex-col w-full min-h-full px-6 pt-10 pb-32"
+    >
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-white tracking-wide">My Projects</h2>
         <button className="p-2 bg-white/5 rounded-full border border-white/5 text-white"><FiMenu /></button>
@@ -34,7 +40,7 @@ export default function Projects() {
 
       <div className="flex flex-col gap-4">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, i) => (
+          {filteredProjects.map((project) => (
             <motion.div 
               key={project.id}
               layout
@@ -57,6 +63,6 @@ export default function Projects() {
           ))}
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }

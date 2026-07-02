@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { FiArrowLeft, FiUser, FiAward, FiMapPin, FiMail, FiStar, FiArrowRight, FiClock, FiFileText } from 'react-icons/fi';
+import { FiArrowLeft, FiUser, FiAward, FiMapPin, FiMail, FiStar, FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -20,7 +20,13 @@ export default function About() {
   ];
 
   return (
-    <div className="flex flex-col w-full min-h-full p-6 pb-32 pt-10">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0, scale: 0.98 }} 
+      transition={{ duration: 0.3 }}
+      className="flex flex-col w-full min-h-full p-6 pb-32 pt-10"
+    >
       <div className="flex items-center gap-4 mb-8">
         <button onClick={() => navigate(-1)} className="text-white p-2.5 rounded-full bg-white/5 hover:bg-white/10 transition border border-white/5 active:scale-90 transition-transform">
           <FiArrowLeft className="text-xl" />
@@ -88,6 +94,6 @@ export default function About() {
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -41,22 +41,24 @@ function AppContent() {
             <div className="w-10 h-10 border-4 border-white/5 border-t-primary rounded-full animate-spin"></div>
           </div>
         }>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Splash />} />
-            <Route path="/onboarding" element={<Onboarding />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/project/:id" element={<ProjectDetails />} />
-            <Route path="/journey" element={<Journey />} />
-            <Route path="/certificates" element={<Certificates />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/service/:slug" element={<ServiceDetail />} />
-            <Route path="/technologies" element={<Technologies />} />
-            <Route path="/education" element={<Education />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Splash />} />
+              <Route path="/onboarding" element={<Onboarding />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/project/:id" element={<ProjectDetails />} />
+              <Route path="/journey" element={<Journey />} />
+              <Route path="/certificates" element={<Certificates />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/service/:slug" element={<ServiceDetail />} />
+              <Route path="/technologies" element={<Technologies />} />
+              <Route path="/education" element={<Education />} />
+            </Routes>
+          </AnimatePresence>
         </Suspense>
       </div>
       
